@@ -21,7 +21,11 @@ gem 'bootstrap-sass', '~> 3.3.6'
 
 group :development, :test do
   gem 'byebug', platform: :mri
+  gem "pry", :require => "pry"
   gem 'rspec-rails'
+  gem 'rspec-pride'
+  gem 'capybara'
+  gem 'launchy'
 end
 
 group :development do
