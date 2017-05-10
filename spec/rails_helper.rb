@@ -28,7 +28,7 @@ def stub_oauth
                                         name: 'Victoria V',
                                         nickname: 'VictoriaVasys',
                                         email: 'vv@gmail.com',
-                                        image_url: 'https://avatars3.githubusercontent.com/u/10079657?v=3'
+                                        image: 'https://avatars3.githubusercontent.com/u/10079657?v=3'
                                        },
                                        credentials: {
                                          token: ENV['GITHUB_USER_TOKEN']

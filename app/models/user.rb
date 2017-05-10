@@ -5,7 +5,7 @@ class User < ApplicationRecord
       new_user.name               = auth_info.info.name
       new_user.username           = auth_info.info.nickname
       new_user.email              = auth_info.info.email
-      new_user.image_url          = auth_info.info.image_url
+      new_user.image_url          = auth_info.info.image
       new_user.token              = auth_info.credentials.token
     end
   end
