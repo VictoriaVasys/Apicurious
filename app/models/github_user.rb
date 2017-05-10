@@ -1,9 +1,7 @@
 class GithubUser
   
-  attr_reader :attrs
-  
   def initialize(attrs={})
-    @attrs = attrs
+    @_attrs = attrs
   end
   
   def self.find_by(token)
@@ -38,5 +36,10 @@ class GithubUser
   def following
     attrs[:following]
   end
+  
+  private
+  
+  attr_reader :_attrs
+  alias_method :attrs, :_attrs
   
 end
