@@ -12,7 +12,7 @@ describe GithubUser do
       expect(user.email).to eq("victoria.vasys@gmail.com")
       expect(user.id).to eq(10079657)
       expect(user.followers).to eq(1)
-      expect(user.following).to eq(31)
+      expect(user.following).to eq(32)
     end
   end
 end

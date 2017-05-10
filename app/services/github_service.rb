@@ -11,13 +11,9 @@ class GithubService
   
   private
   
-  def token
-    @_token
-  end
-  
-  def conn
-    @_conn
-  end
+  attr_reader :_token, :_conn
+  alias_method :token, :_token
+  alias_method :conn, :_conn
   
   def parser(response)
     JSON.parse(response.body, symbolize_names: true)

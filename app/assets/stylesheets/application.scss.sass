@@ -1,0 +1,95 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+@import "materialize/components/color"
+$primary-color: color("grey", "darken-3") !default
+@import "materialize"
+
+.nav-wrapper
+  padding-right: 10px
+  background-color: #24292E
+  
+  a
+    color: rgba(255,255,255,0.75)
+    font-weight: 500
+    
+  a:hover
+    color: white
+    
+  .github-icon
+    margin-left: 10px
+    height: 32px
+    vertical-align: middle
+    
+  .search
+    background-color: #3F4448
+    margin: 12px
+    border-radius: 3px
+    width: 300px
+    height: 27px
+    vertical-align: middle
+    
+    a
+      line-height: 29px
+      font-weight: 400
+      font-size: .9em
+      padding-left: 10px
+      color: #8C8F92
+    
+  .profile-pic
+    height: 26px
+    vertical-align: middle
+    padding: 0px
+    margin: 0px
+    border-radius: 3px
+  
+  i.tiny
+    margin-left: 2px
+    font-size: 1.4rem
+
+nav
+  height: 52px
+  line-height: 52px
+
+nav i, nav [class^="mdi-"], nav [class*="mdi-"], nav i.material-icons
+  height: 52px
+  line-height: 52px
+  
+nav ul a
+  padding-right: 4px
+
+nav .button-collapse i
+  height: 52px
+  line-height: 52px
+
+nav .brand-logo 
+  font-size: 1.6rem
+
+@media only screen and (min-width: 601px)
+  nav, nav .nav-wrapper i, nav a.button-collapse, nav a.button-collapse i
+    height: 52px
+    line-height: 52px
+
+.home
+  background: url("https://s3.amazonaws.com/course_report_staging/close_up_code.jpg")
+  height: 100vh
+  background-repeat: no-repeat
+  background-size: cover
+  padding: 0px
+
+.header
+  display: block
+  padding: 0px
+  color: white
