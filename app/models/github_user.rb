@@ -13,11 +13,11 @@ class GithubUser
     attrs[:name]
   end
   
-  def login
+  def username
     attrs[:login]
   end
   
-  def avatar_url
+  def image_url
     attrs[:avatar_url]
   end
   
@@ -29,13 +29,23 @@ class GithubUser
     attrs[:id]
   end
   
-  def followers
+  def followers_count
     attrs[:followers]
   end
   
-  def following
+  def following_count
     attrs[:following]
   end
+  
+  def starred(token)
+    GithubService.new(token).starred
+  end
+
+  # def followers(token)
+  #   GithubService.new(token).followers.map do |user|
+  #     user[:login]
+  #   end
+  # end
   
   private
   

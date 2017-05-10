@@ -7,23 +7,24 @@ feature "user logs in" do
     click_link 'Sign in with GitHub'
   end
   
-  xscenario "and sees their name" do
-    expect(page).to have_content "Victoria Vasys"
+  scenario "and sees their name" do
+    expect(page).to have_content "Victoria V"
   end
   
-  xscenario "and sees their number of starred repos" do
+  scenario "and sees their profie pic" do
+    expect(page).to have_css "img[src*='https://avatars3.githubusercontent.com/u/10079657?v=3']"
+  end
+  
+  scenario "and sees their number of starred repos" do
     expect(page).to have_content "Stars 3"
   end
   
-  xscenario "and sees their followers" do
+  scenario "and sees their number of followers" do
     expect(page).to have_content "Followers 1"
   end
   
-  xscenario "and sees who they're following" do
-    expect(page).to have_content "Following 31"
+  scenario "and sees the number of people who they're following" do
+    expect(page).to have_content "Following 32"
   end
   
-  xscenario "and sees their profie pic" do
-    expect(page).to have_content "https://avatars3.githubusercontent.com/u/10079657?v=3"
-  end
 end
