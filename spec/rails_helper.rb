@@ -5,6 +5,46 @@ require File.expand_path('../../config/environment', __FILE__)
 abort("The Rails environment is running in production mode!") if Rails.env.production?
 require 'spec_helper'
 require 'rspec/rails'
+require 'database_cleaner'
+
+DatabaseCleaner.strategy = :truncation
+
+RSpec.configure do |c|
+  c.before(:all) do
+    DatabaseCleaner.clean
+  end
+  c.after(:each) do
+    DatabaseCleaner.clean
+  end
+end
+
+def stub_oauth
+  OmniAuth.config.test_mode = true
+
+  OmniAuth.config.mock_auth[:github] = OmniAuth::AuthHash.new({
+                                       provider: 'github',
+                                       uid: '1234',
+                                       info: {
+                                        name: 'Victoria V',
+                                        nickname: 'VictoriaVasys',
+                                        email: 'vv@gmail.com',
+                                        image_url: 'https://avatars3.githubusercontent.com/u/10079657?v=3'
+                                       },
+                                       credentials: {
+                                         token: ENV['GITHUB_USER_TOKEN']
+                                       },
+                                       extra: {
+                                         raw_info: {
+                                           follwers_url: 'https://api.github.com/users/VictoriaVasys/followers',
+                                           following_url: 'https://api.github.com/users/VictoriaVasys/following{/other_user}',
+                                           starred_url: 'https://api.github.com/users/VictoriaVasys/starred{/owner}{/repo}',
+                                           organizations_url: 'https://api.github.com/users/VictoriaVasys/orgs',
+                                           repos_url: 'https://api.github.com/users/VictoriaVasys/repos',
+                                           events_url: 'https://api.github.com/users/VictoriaVasys/events{/privacy}'
+                                         }
+                                       }
+  })
+end
 # Add additional requires below this line. Rails is not loaded until this point!
 
 # Requires supporting ruby files with custom matchers and macros, etc, in

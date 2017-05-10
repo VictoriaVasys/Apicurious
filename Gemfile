@@ -17,7 +17,7 @@ gem 'jquery-rails'
 gem 'jbuilder', '~> 2.5'
 gem 'figaro'
 gem 'omniauth-github'
-gem 'bootstrap-sass', '~> 3.3.6'
+gem 'materialize-sass'
 
 group :development, :test do
   gem 'byebug', platform: :mri
@@ -26,6 +26,7 @@ group :development, :test do
   gem 'rspec-pride'
   gem 'capybara'
   gem 'launchy'
+  gem 'database_cleaner'
 end
 
 group :development do
