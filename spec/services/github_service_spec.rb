@@ -22,4 +22,6 @@ describe GithubService do
     expect(user[:following]).to be_an(Integer)
   end
   
+  
+  
 end

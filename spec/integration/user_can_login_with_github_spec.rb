@@ -12,7 +12,6 @@ RSpec.feature 'User can log in w/ GitHub' do
 
       expect(page.status_code).to eq 200
       click_link 'Sign in with GitHub'
-
       expect(current_path).to eq dashboard_path
       expect(page.body).to have_content "Signed in as VictoriaVasys"
       expect(page.body).to have_link 'Sign out'

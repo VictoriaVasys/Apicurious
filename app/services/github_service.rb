@@ -9,6 +9,14 @@ class GithubService
     parser(conn.get "/user?access_token=#{token}")
   end
   
+  def starred
+    parser(conn.get "/user/starred?access_token=#{token}")
+  end
+
+  # def followers
+  #   parser(conn.get "/user/followers?access_token=#{token}")
+  # end
+  
   private
   
   attr_reader :_token, :_conn

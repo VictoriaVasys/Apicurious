@@ -17,6 +17,9 @@
 $primary-color: color("grey", "darken-3") !default
 @import "materialize"
 
+// body
+//   padding: 25px
+
 .nav-wrapper
   padding-right: 10px
   background-color: #24292E
@@ -29,7 +32,7 @@ $primary-color: color("grey", "darken-3") !default
     color: white
     
   .github-icon
-    margin-left: 10px
+    margin-left: 20px
     height: 32px
     vertical-align: middle
     
@@ -48,7 +51,7 @@ $primary-color: color("grey", "darken-3") !default
       padding-left: 10px
       color: #8C8F92
     
-  .profile-pic
+  .small-profile-pic
     height: 26px
     vertical-align: middle
     padding: 0px
@@ -76,20 +79,55 @@ nav .button-collapse i
 
 nav .brand-logo 
   font-size: 1.6rem
+  
+.profile-pic
+  height: 220px
+  border-radius: 5px
+  margin-bottom: 0px
 
 @media only screen and (min-width: 601px)
   nav, nav .nav-wrapper i, nav a.button-collapse, nav a.button-collapse i
     height: 52px
     line-height: 52px
 
-.home
-  background: url("https://s3.amazonaws.com/course_report_staging/close_up_code.jpg")
-  height: 100vh
-  background-repeat: no-repeat
-  background-size: cover
-  padding: 0px
+.container
+  padding: 25px 0px 0px 0px
+  margin-left: 40px
+  margin-right: 40px
+
+// .home
+//   background: url("https://s3.amazonaws.com/course_report_staging/close_up_code.jpg")
+//   height: 100vh
+//   background-repeat: no-repeat
+//   background-size: cover
+//   padding: 0px
 
 .header
   display: block
   padding: 0px
   color: white
+  
+.count
+  display: inline-block
+  padding: 2px 5px
+  font-size: 12px
+  font-weight: 600
+  line-height: 1
+  color: #586069
+  background-color: rgba(27,31,35,0.08)
+  border-radius: 20px
+  
+.name
+  font-weight: 500
+  font-size: 2rem
+  margin-bottom: 2px
+  color: #24292E
+  
+.username
+  margin-top: 0
+  font-weight: 300
+  font-size: 1.4rem
+  color: #666666
+  
+h6
+  font-size: 1.3rem
