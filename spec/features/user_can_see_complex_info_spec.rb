@@ -1,15 +1,15 @@
 require 'rails_helper'
 
-feature "user logs in" do
+describe GithubUser do
   before do
     stubbed_response = {
       :login=>"VictoriaVasys",
       :id=>10079657,
       :avatar_url=>"https://avatars3.githubusercontent.com/u/10079657?v=3",
       :followers_url=>"https://api.github.com/users/VictoriaVasys/followers",
-      :following_url=>"https://api.github.com/users/VictoriaVasys/following",
-      :gists_url=>"https://api.github.com/users/VictoriaVasys/gists",
-      :starred_url=>"https://api.github.com/users/VictoriaVasys/starred",
+      :following_url=>"https://api.github.com/users/VictoriaVasys/following{/other_user}",
+      :gists_url=>"https://api.github.com/users/VictoriaVasys/gists{/gist_id}",
+      :starred_url=>"https://api.github.com/users/VictoriaVasys/starred{/owner}{/repo}",
       :subscriptions_url=>"https://api.github.com/users/VictoriaVasys/subscriptions",
       :organizations_url=>"https://api.github.com/users/VictoriaVasys/orgs",
       :repos_url=>"https://api.github.com/users/VictoriaVasys/repos",
@@ -32,25 +32,4 @@ feature "user logs in" do
       .with(filter)
       .and_return(stubbed_response)
   end
-  
-  scenario "and sees their name" do
-    expect(page).to have_content "Victoria V"
-  end
-  
-  scenario "and sees their profie pic" do
-    expect(page).to have_css "img[src*='https://avatars3.githubusercontent.com/u/10079657?v=3']"
-  end
-  
-  scenario "and sees their number of starred repos" do
-    expect(page).to have_content "Stars 3"
-  end
-  
-  scenario "and sees their number of followers" do
-    expect(page).to have_content "Followers 2"
-  end
-  
-  scenario "and sees the number of people who they're following" do
-    expect(page).to have_content "Following 32"
-  end
-  
 end
