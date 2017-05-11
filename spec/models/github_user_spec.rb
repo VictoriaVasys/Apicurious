@@ -11,8 +11,8 @@ describe GithubUser do
       expect(user.image_url).to eq("https://avatars3.githubusercontent.com/u/10079657?v=3")
       expect(user.email).to eq("victoria.vasys@gmail.com")
       expect(user.id).to eq(10079657)
-      expect(user.followers_count).to eq(1)
-      expect(user.following_count).to eq(32)
+      expect(user.followers_count).to eq(2)
+      expect(user.following_count).to eq(33)
     end
   end
   

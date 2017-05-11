@@ -25,8 +25,16 @@ class GithubUser
     attrs[:email]
   end
   
-  def id
-    attrs[:id]
+  def bio
+    attrs[:bio]
+  end
+  
+  def company
+    attrs[:company]
+  end
+  
+  def location
+    attrs[:location]
   end
   
   def followers_count
@@ -39,6 +47,10 @@ class GithubUser
   
   def starred(token)
     GithubService.new(token).starred
+  end
+  
+  def star_count(token)
+    starred(token).count
   end
 
   # def followers(token)
