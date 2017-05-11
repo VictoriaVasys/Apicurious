@@ -20,7 +20,7 @@ feature "user logs in" do
   end
   
   scenario "and sees their number of followers" do
-    expect(page).to have_content "Followers 1"
+    expect(page).to have_content "Followers 2"
   end
   
   scenario "and sees the number of people who they're following" do
