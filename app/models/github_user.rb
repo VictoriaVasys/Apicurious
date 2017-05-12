@@ -1,12 +1,13 @@
 class GithubUser
   
-  def initialize(attrs={})
+  def initialize(attrs={}, token)
     @_attrs = attrs
+    @_token = token
   end
   
   def self.find_by(token)
     user = GithubService.new(token).find_user
-    new(user)
+    new(user, token)
   end
   
   def name
@@ -53,15 +54,38 @@ class GithubUser
     starred(token).count
   end
 
-  # def followers(token)
-  #   GithubService.new(token).followers.map do |user|
-  #     user[:login]
+  def followers
+    GithubService.new(token).followers.map do |user|
+      GithubUser.new(user, token)
+    end
+  end
+  
+  # def following
+  #   GithubService.new(@token).following.map do |user|
+  #     GithubUser.new(user, @token)
   #   end
+  # end
+  # 
+  # def repos
+  #   Repo.repos(@token)
+  # end
+  # 
+  # def organizations
+  #   Organization.organizations(@token)
+  # end
+  # 
+  # def events(nickname)
+  #   Event.events(nickname, @token)
+  # end
+  # 
+  # def recent_commits(nickname)
+  #   Event.recent_commits(nickname, @token)
   # end
   
   private
   
-  attr_reader :_attrs
+  attr_reader :_attrs, :_token
   alias_method :attrs, :_attrs
+  alias_method :token, :_token
   
 end

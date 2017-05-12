@@ -1,0 +1,26 @@
+<div class="container">
+ <div class="row">
+   <div class ="col s5">
+     <%= image_tag(@user.image_url, :class=> 'profile-pic') %>
+     <h5 class='name'><%= @user.name %></h5>
+     <h5 class='username'><%= @user.username%></h5>
+     <span class='bio'><%= @user.bio%></span>
+     <hr>
+     <span class='company'><em><%= @user.company%></em></span><br>
+     <span class='location'><%= @user.location%></span><br>
+     <span class='email'><a href=<%= "mailto:#{@user.email}"%>><%="#{@user.email}"%></a></span>
+   </div>
+   <div class="col s2">
+     </br>
+     <h6>Stars <span class="count"><%= @user.star_count(current_user.token) %></span></h6>
+   </div>
+   <div class="col s2">
+     </br>
+     <h6><%= link_to "Followers", dashboard_followers_path %> <span class="count"><%= @user.followers_count %></span></h6>
+   </div>
+   <div class="col s2">
+     </br>
+     <h6>Following <span class="count"><%= @user.following_count %></span></h6>
+   </div>
+ </div>
+</div>
