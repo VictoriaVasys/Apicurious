@@ -1,0 +1,22 @@
+<%= render 'layouts/base_layout' %>
+<% @user.following.each_with_index do |gh_user, index| %>
+  <div class="col m9 m3 s12">
+    <div class="<%= "user_#{index}" %>">
+      <div class="col m2">
+        <%= image_tag(gh_user.image_url, :class=> 'medium-profile-pic') %>
+        <br>
+      </div> 
+      <div class="col m10">
+        <strong><%= gh_user.name %></strong>
+        <%= gh_user.username %>
+      </div>
+    </div>
+    <div class="col m12">
+      <br>
+      <hr>
+      <br>
+    </div>
+    
+  </div>
+<% end %>
+</div>

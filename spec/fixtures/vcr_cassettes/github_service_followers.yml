@@ -1,0 +1,76 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://api.github.com/user/followers?access_token=<GITHUB_USER_TOKEN>
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.11.0
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - GitHub.com
+      Date:
+      - Mon, 15 May 2017 07:48:15 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Status:
+      - 200 OK
+      X-Ratelimit-Limit:
+      - '5000'
+      X-Ratelimit-Remaining:
+      - '4076'
+      X-Ratelimit-Reset:
+      - '1494837126'
+      Cache-Control:
+      - private, max-age=60, s-maxage=60
+      Vary:
+      - Accept, Authorization, Cookie, X-GitHub-OTP
+      - Accept-Encoding
+      Etag:
+      - W/"d6b04a4593060c79817749fee3ddc469"
+      X-Oauth-Scopes:
+      - ''
+      X-Accepted-Oauth-Scopes:
+      - ''
+      X-Oauth-Client-Id:
+      - "<GITHUB_KEY>"
+      X-Github-Media-Type:
+      - github.v3; format=json
+      Access-Control-Expose-Headers:
+      - ETag, Link, X-GitHub-OTP, X-RateLimit-Limit, X-RateLimit-Remaining, X-RateLimit-Reset,
+        X-OAuth-Scopes, X-Accepted-OAuth-Scopes, X-Poll-Interval
+      Access-Control-Allow-Origin:
+      - "*"
+      Content-Security-Policy:
+      - default-src 'none'
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubdomains; preload
+      X-Content-Type-Options:
+      - nosniff
+      X-Frame-Options:
+      - deny
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Served-By:
+      - a6882e5cd2513376cb9481dbcd83f3a2
+      X-Github-Request-Id:
+      - 11EF:3FF6:7499FB2:8FAFC44:59195D3F
+    body:
+      encoding: ASCII-8BIT
+      string: '[{"login":"stovermc","id":15877604,"avatar_url":"https://avatars0.githubusercontent.com/u/15877604?v=3","gravatar_id":"","url":"https://api.github.com/users/stovermc","html_url":"https://github.com/stovermc","followers_url":"https://api.github.com/users/stovermc/followers","following_url":"https://api.github.com/users/stovermc/following{/other_user}","gists_url":"https://api.github.com/users/stovermc/gists{/gist_id}","starred_url":"https://api.github.com/users/stovermc/starred{/owner}{/repo}","subscriptions_url":"https://api.github.com/users/stovermc/subscriptions","organizations_url":"https://api.github.com/users/stovermc/orgs","repos_url":"https://api.github.com/users/stovermc/repos","events_url":"https://api.github.com/users/stovermc/events{/privacy}","received_events_url":"https://api.github.com/users/stovermc/received_events","type":"User","site_admin":false},{"login":"bschwartz10","id":21000661,"avatar_url":"https://avatars3.githubusercontent.com/u/21000661?v=3","gravatar_id":"","url":"https://api.github.com/users/bschwartz10","html_url":"https://github.com/bschwartz10","followers_url":"https://api.github.com/users/bschwartz10/followers","following_url":"https://api.github.com/users/bschwartz10/following{/other_user}","gists_url":"https://api.github.com/users/bschwartz10/gists{/gist_id}","starred_url":"https://api.github.com/users/bschwartz10/starred{/owner}{/repo}","subscriptions_url":"https://api.github.com/users/bschwartz10/subscriptions","organizations_url":"https://api.github.com/users/bschwartz10/orgs","repos_url":"https://api.github.com/users/bschwartz10/repos","events_url":"https://api.github.com/users/bschwartz10/events{/privacy}","received_events_url":"https://api.github.com/users/bschwartz10/received_events","type":"User","site_admin":false}]'
+    http_version: 
+  recorded_at: Mon, 15 May 2017 07:48:15 GMT
+recorded_with: VCR 3.0.3

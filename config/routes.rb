@@ -7,5 +7,12 @@ Rails.application.routes.draw do
     delete '/logout', to: 'sessions#destroy'
     
     get '/dashboard', to: 'dashboard#index'
-  
+    
+    namespace :dashboard do
+      get '/followers', to: 'followers#index'
+      get '/following', to: 'following#index'
+      get '/starred', to: 'starred#index'
+      get '/repos', to: 'repos#index'
+    end
+      
 end

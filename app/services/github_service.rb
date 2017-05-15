@@ -13,9 +13,20 @@ class GithubService
     parser(conn.get("/user/starred", token_param))
   end
 
-  # def followers
-  #   parser(conn.get("/user/followers, token_param))
-  # end
+  def followers
+    parser(conn.get("/user/followers", token_param))
+  end
+  
+  def following
+    parser(conn.get("/user/following", token_param))
+  end
+
+  def repos
+    parser(conn.get do |req|  
+      req.url '/user/repos', token_param
+      req.params['per_page'] = 100
+    end)
+  end
   
   private
   

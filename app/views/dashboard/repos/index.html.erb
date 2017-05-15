@@ -1,0 +1,14 @@
+<%= render 'layouts/base_layout' %>
+    <div class="col m9 s12">
+      <% @user.repos.each_with_index do |repo, index| %>
+        <div class="<%= "repo_#{index}" %> col m12">
+          <strong><h5><%= repo.name %></h5></strong><br>
+          <p><%= repo.description %></p>
+          <%= repo.language %>
+          <br>
+          <br>
+          <hr>
+        </div>
+      <% end %>
+    </div>
+  </div>
