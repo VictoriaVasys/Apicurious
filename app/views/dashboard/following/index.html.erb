@@ -1,6 +1,6 @@
 <%= render 'layouts/base_layout' %>
-  <% @user.followers.each_with_index do |gh_user, index| %>
-  <div class="col m9 s12">
+<% @user.following.each_with_index do |gh_user, index| %>
+  <div class="col m9 m3 s12">
     <div class="<%= "user_#{index}" %>">
       <div class="col m2">
         <%= image_tag(gh_user.image_url, :class=> 'medium-profile-pic') %>
@@ -18,5 +18,5 @@
     </div>
     
   </div>
-  <% end %>
+<% end %>
 </div>

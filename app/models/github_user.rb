@@ -46,12 +46,12 @@ class GithubUser
     attrs[:following]
   end
   
-  def starred(token)
-    GithubService.new(token).starred
+  def starred
+    Repo.starred(token)
   end
   
-  def star_count(token)
-    starred(token).count
+  def star_count
+    starred.count
   end
 
   def followers
@@ -60,27 +60,15 @@ class GithubUser
     end
   end
   
-  # def following
-  #   GithubService.new(@token).following.map do |user|
-  #     GithubUser.new(user, @token)
-  #   end
-  # end
-  # 
-  # def repos
-  #   Repo.repos(@token)
-  # end
-  # 
-  # def organizations
-  #   Organization.organizations(@token)
-  # end
-  # 
-  # def events(nickname)
-  #   Event.events(nickname, @token)
-  # end
-  # 
-  # def recent_commits(nickname)
-  #   Event.recent_commits(nickname, @token)
-  # end
+  def following
+    GithubService.new(token).following.map do |user|
+      GithubUser.new(user, token)
+    end
+  end
+  
+  def repos
+    Repo.repos(token)
+  end
   
   private
   

@@ -9,10 +9,10 @@ Rails.application.routes.draw do
     get '/dashboard', to: 'dashboard#index'
     
     namespace :dashboard do
-      # resources :repos, only: [:index, :new, :create]
       get '/followers', to: 'followers#index'
-      # get '/following', to: 'following#index'
-      # get '/starred', to: 'starred#index'
+      get '/following', to: 'following#index'
+      get '/starred', to: 'starred#index'
+      get '/repos', to: 'repos#index'
     end
       
 end

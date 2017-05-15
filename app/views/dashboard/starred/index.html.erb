@@ -1,0 +1,12 @@
+<%= render 'layouts/base_layout' %>
+    <div class="col m9 s12">
+      <% @user.starred.each_with_index do |starred, index| %>
+        <div class="<%= "repo_#{index}" %> col m12">
+            <h5><%= starred.full_name %></h5><br>
+            <p><%= starred.description %></p>
+            <%= starred.language %>
+            <hr>
+        </div>
+      <% end %>
+    </div>
+  </div>

@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 feature "user logs in" do
-  attr_reader :user, :gh_user
+  attr_reader :gh_user
   before do
     @gh_user = stub_github_user
     allow_any_instance_of(GithubService)
@@ -21,7 +21,7 @@ feature "user logs in" do
   end
   
   scenario "and sees their number of starred repos" do
-    expect(page).to have_content "Stars 3"
+    expect(page).to have_content "Stars #{stub_repos.count}"
   end
   
   scenario "and sees their number of followers" do

@@ -1,4 +1,4 @@
-class Dashboard::FollowersController < ApplicationController
+class Dashboard::ReposController < ApplicationController
   
   def index
     @user = GithubUser.find_by(current_user.token)
